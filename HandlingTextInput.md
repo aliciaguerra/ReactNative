@@ -17,4 +17,27 @@ would be translated as "🍕🍕🍕".
                       }
                     
                     render() {
+                     return(
+                      <View style={{padding: 10}}>
+                      <TextInput
+                       style={{height: 40}}
+                       placeholder="Type here to translate!"
+                       onChangeText={(text) => this.setState({text})}
+                      />
+                      <Text style={{padding: 10, fontsize: 42}}>
+                       {this.state.text.split(').map((word) => word && '🍕').join('')}
+                      </Text>
+                     </View>
+                        );
+                      }
+                    }
+                    
+                    AppRegistry.registerComponent('PizzaTranslator', () => PizzaTranslator);
+                    
+In this example, we store text in the state, because it changes over time.
+
+There are a lot more things you might want to do with the text input. For example, you could validate the text inside
+while the user types. 
+
+Text input is probably the simplest example of a component whose state changes naturally over time.
                       
